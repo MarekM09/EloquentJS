@@ -1,8 +1,12 @@
-function min(a, b) {
-	if (a < b)
-		return a;
-	else
-		return b;
-};
+function isEven(number) {
+  if(number < 0)
+  	return isEven(-number);
+  else if (number == 0)
+  	return true;
+  else if (number == 1)
+  	return false;
+  else
+  	return isEven(number - 2);
+}
 
-console.log(min(3, -2));
+console.log(isEven(-50));
