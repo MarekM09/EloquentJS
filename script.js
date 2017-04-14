@@ -1,15 +1,8 @@
-var size = 8;
+function min(a, b) {
+	if (a < b)
+		return a;
+	else
+		return b;
+};
 
-var board = "";
-
-for (var y = 0; y < size; y++) {
-  for (var x = 0; x < size; x++) {
-    if ((x + y) % 2 == 0)
-      board += " ";
-    else
-      board += "#";
-  }
-  board += "\n";
-}
-
-console.log(board);
+console.log(min(3, -2));
