@@ -1,18 +1,27 @@
-function countChar(str, chr) {
-	var counter = 0;
-
-	for(var i = 0; i < str.length; i++)
-	{
-		if (str.charAt(i) === chr) {
-			counter++
+function range(start, end, step) {
+	var jump = step || 1;
+	var arr =[];
+	if (step < 0)	{
+		for (var i = start; i >= end; i += jump)
+		{
+			arr.push(i);
+		}
+	} else {
+		for (var i = start; i <= end; i += jump)
+		{
+			arr.push(i);
 		}
 	}
-	return counter;
+	return arr;
 }
 
-function countBs(str) {
-	return countChar(str, "B")
+function sum(arr) {
+	var result = 0;
+	for (var i = 0; i < arr.length; i++)
+	{
+		result += arr[i];
+	}
+	return result;
 }
 
-console.log(countChar("kakkerlak", "k"));
-console.log(countBs("BBC"));
+console.log(range(5, 2, -1));
