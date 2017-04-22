@@ -1,27 +1,27 @@
-function range(start, end, step) {
-	var jump = step || 1;
-	var arr =[];
-	if (step < 0)	{
-		for (var i = start; i >= end; i += jump)
-		{
-			arr.push(i);
-		}
-	} else {
-		for (var i = start; i <= end; i += jump)
-		{
-			arr.push(i);
-		}
-	}
-	return arr;
-}
+function reverseArray(arr) {
+	var result =[];
 
-function sum(arr) {
-	var result = 0;
-	for (var i = 0; i < arr.length; i++)
-	{
-		result += arr[i];
+	for (i = 0; i < arr.length; i++) {
+		result.unshift(arr[i]);
 	}
 	return result;
 }
 
-console.log(range(5, 2, -1));
+function reverseArrayInPlace(arr) {
+	var old = 0;
+
+	for (var i = 0; i < Math.floor(arr.length / 2); i++) {
+		old = arr[i];
+		arr[i] = arr[arr.length - 1 - i];
+		arr[arr.length - 1 - i] = old;
+	}
+	return arr;
+}
+
+var stringArray = ["A", "B", "C"]
+console.log(stringArray);
+console.log(reverseArray(stringArray));
+
+var arrayValue = [1, 2, 3, 4, 5];
+reverseArrayInPlace(arrayValue);
+console.log(arrayValue);
