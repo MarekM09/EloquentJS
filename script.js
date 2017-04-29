@@ -19,8 +19,6 @@ function prepend(value, list) {
 }
 
 function nth(list, number) {
-	//var arr = listToArray(list);
-
   if(!list) {
   	return undefined;
   }
